@@ -15,6 +15,9 @@
 		5870A5131F5ED0F5002EA510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5870A5111F5ED0F5002EA510 /* LaunchScreen.storyboard */; };
 		5870A51E1F5ED0F5002EA510 /* TestMethodSwizzlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870A51D1F5ED0F5002EA510 /* TestMethodSwizzlingTests.m */; };
 		5870A5291F5ED0F5002EA510 /* TestMethodSwizzlingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870A5281F5ED0F5002EA510 /* TestMethodSwizzlingUITests.m */; };
+		5870A5381F5ED111002EA510 /* BBAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870A5371F5ED111002EA510 /* BBAnimal.m */; };
+		5870A53B1F5ED11E002EA510 /* BBDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870A53A1F5ED11E002EA510 /* BBDog.m */; };
+		5870A53E1F5ED217002EA510 /* BBMethodSwizzlingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870A53D1F5ED217002EA510 /* BBMethodSwizzlingUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		5870A5241F5ED0F5002EA510 /* TestMethodSwizzlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMethodSwizzlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5870A5281F5ED0F5002EA510 /* TestMethodSwizzlingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMethodSwizzlingUITests.m; sourceTree = "<group>"; };
 		5870A52A1F5ED0F5002EA510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5870A5361F5ED111002EA510 /* BBAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAnimal.h; sourceTree = "<group>"; };
+		5870A5371F5ED111002EA510 /* BBAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAnimal.m; sourceTree = "<group>"; };
+		5870A5391F5ED11E002EA510 /* BBDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDog.h; sourceTree = "<group>"; };
+		5870A53A1F5ED11E002EA510 /* BBDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDog.m; sourceTree = "<group>"; };
+		5870A53C1F5ED217002EA510 /* BBMethodSwizzlingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMethodSwizzlingUtil.h; sourceTree = "<group>"; };
+		5870A53D1F5ED217002EA510 /* BBMethodSwizzlingUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMethodSwizzlingUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,12 @@
 				5870A5111F5ED0F5002EA510 /* LaunchScreen.storyboard */,
 				5870A5141F5ED0F5002EA510 /* Info.plist */,
 				5870A5031F5ED0F5002EA510 /* Supporting Files */,
+				5870A5361F5ED111002EA510 /* BBAnimal.h */,
+				5870A5371F5ED111002EA510 /* BBAnimal.m */,
+				5870A5391F5ED11E002EA510 /* BBDog.h */,
+				5870A53A1F5ED11E002EA510 /* BBDog.m */,
+				5870A53C1F5ED217002EA510 /* BBMethodSwizzlingUtil.h */,
+				5870A53D1F5ED217002EA510 /* BBMethodSwizzlingUtil.m */,
 			);
 			path = TestMethodSwizzling;
 			sourceTree = "<group>";
@@ -273,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5870A53B1F5ED11E002EA510 /* BBDog.m in Sources */,
 				5870A50B1F5ED0F5002EA510 /* ViewController.m in Sources */,
+				5870A53E1F5ED217002EA510 /* BBMethodSwizzlingUtil.m in Sources */,
 				5870A5081F5ED0F5002EA510 /* AppDelegate.m in Sources */,
 				5870A5051F5ED0F5002EA510 /* main.m in Sources */,
+				5870A5381F5ED111002EA510 /* BBAnimal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

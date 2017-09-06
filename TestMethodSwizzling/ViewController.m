@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "BBDog.h"
+#import "BBMethodSwizzlingUtil.h"
 
 @interface ViewController ()
 
@@ -14,9 +16,24 @@
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    BBAnimal *animal = [BBAnimal new];
+    [animal method1];   //b
+    [animal method2];   //cab
+    [animal method3];   //ab
+    
+    [BBMethodSwizzlingUtil bb_printInstanceMethodList:[BBAnimal class]];
+    
+    [BBDog methodA];
+    [BBDog methodB];
+    [BBDog methodC];
+    
+    [BBMethodSwizzlingUtil bb_printClassMethodList:[BBDog class]];
 }
 
 
