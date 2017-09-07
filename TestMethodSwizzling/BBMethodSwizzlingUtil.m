@@ -10,31 +10,112 @@
 
 @implementation BBMethodSwizzlingUtil
 
-+ (void)bb_swizzleInstanceMethod:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
++ (void)bb_swizzleInstanceMethod1:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
 {
     Method originalMethod = class_getInstanceMethod(class, originSEL);
     Method swizzledMethod = class_getInstanceMethod(class, newSEL);
     
-    BOOL addSuccess = class_addMethod(class, originSEL, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
+    IMP originalIMP = method_getImplementation(originalMethod);
+    IMP swizzledIMP = method_getImplementation(swizzledMethod);
+    const char *originalType = method_getTypeEncoding(originalMethod);
+    const char *swizzledType = method_getTypeEncoding(swizzledMethod);
+    
+    BOOL addSuccess = class_addMethod(class, originSEL, swizzledIMP, swizzledType);
     if (addSuccess) {
-        class_replaceMethod(class, newSEL, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+        class_replaceMethod(class, newSEL, originalIMP, originalType);
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 
-+ (void)bb_swizzleClassMethod:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
+//不推荐使用
++ (void)bb_swizzleInstanceMethod2:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
+{
+    Method originalMethod = class_getInstanceMethod(class, originSEL);
+    Method swizzledMethod = class_getInstanceMethod(class, newSEL);
+    
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
+
++ (void)bb_swizzleInstanceMethod3:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
+{
+    Method originalMethod = class_getInstanceMethod(class, originSEL);
+    Method swizzledMethod = class_getInstanceMethod(class, newSEL);
+    
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
+    IMP originalIMP = method_getImplementation(originalMethod);
+    IMP swizzledIMP = method_getImplementation(swizzledMethod);
+    const char *originalType = method_getTypeEncoding(originalMethod);
+    const char *swizzledType = method_getTypeEncoding(swizzledMethod);
+    
+    class_replaceMethod(class,newSEL,originalIMP,originalType);
+    class_replaceMethod(class,originSEL,swizzledIMP,swizzledType);
+}
+
++ (void)bb_swizzleClassMethod1:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
 {
     Method originalMethod = class_getClassMethod(class, originSEL);
     Method swizzledMethod = class_getClassMethod(class, newSEL);
     
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
     Class metaClass = objc_getMetaClass(class_getName(class));
-    BOOL addSuccess = class_addMethod(metaClass, originSEL, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    IMP originalIMP = method_getImplementation(originalMethod);
+    IMP swizzledIMP = method_getImplementation(swizzledMethod);
+    const char *originalType = method_getTypeEncoding(originalMethod);
+    const char *swizzledType = method_getTypeEncoding(swizzledMethod);
+    
+    BOOL addSuccess = class_addMethod(metaClass, originSEL, swizzledIMP, swizzledType);
     if (addSuccess) {
-        class_replaceMethod(metaClass, newSEL, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+        class_replaceMethod(metaClass, newSEL, originalIMP, originalType);
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
+}
+
+//不推荐使用
++ (void)bb_swizzleClassMethod2:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
+{
+    Method originalMethod = class_getClassMethod(class, originSEL);
+    Method swizzledMethod = class_getClassMethod(class, newSEL);
+    
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
+
++ (void)bb_swizzleClassMethod3:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL
+{
+    Method originalMethod = class_getClassMethod(class, originSEL);
+    Method swizzledMethod = class_getClassMethod(class, newSEL);
+    
+    if (!originalMethod || !swizzledMethod) {
+        return;
+    }
+    
+    Class metaClass = objc_getMetaClass(class_getName(class));
+    IMP originalIMP = method_getImplementation(originalMethod);
+    IMP swizzledIMP = method_getImplementation(swizzledMethod);
+    const char *originalType = method_getTypeEncoding(originalMethod);
+    const char *swizzledType = method_getTypeEncoding(swizzledMethod);
+    
+    class_replaceMethod(metaClass,newSEL,originalIMP,originalType);
+    class_replaceMethod(metaClass,originSEL,swizzledIMP,swizzledType);
 }
 
 + (void)bb_printInstanceMethodList:(Class)class

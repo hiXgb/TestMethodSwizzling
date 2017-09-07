@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestMethodSwizzling/BBMethodSwizzlingUtil.m"
-            timestampString = "526309000.167725"
+            timestampString = "526466497.821412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "+bb_swizzleInstanceMethod:originSEL:newSEL:"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "+bb_swizzleInstanceMethod3:originSEL:newSEL:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestMethodSwizzling/BBMethodSwizzlingUtil.m"
-            timestampString = "526309001.487753"
+            timestampString = "526466497.821412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "+bb_swizzleClassMethod:originSEL:newSEL:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "+bb_swizzleInstanceMethod1:originSEL:newSEL:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,29 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestMethodSwizzling/BBMethodSwizzlingUtil.m"
-            timestampString = "526310279.769769"
+            filePath = "TestMethodSwizzling/ViewController.m"
+            timestampString = "526466311.78629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "+bb_printClassMethodList:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestMethodSwizzling/BBMethodSwizzlingUtil.m"
-            timestampString = "526310274.678069"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "+bb_printInstanceMethodList:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

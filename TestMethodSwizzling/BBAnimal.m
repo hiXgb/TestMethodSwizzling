@@ -13,10 +13,11 @@
 
 + (void)load
 {
-    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod:[self class] originSEL:@selector(method1) newSEL:@selector(method2)];
-    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod:[self class] originSEL:@selector(method2) newSEL:@selector(method3)];
+    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod1:[self class] originSEL:@selector(method1) newSEL:@selector(method2)];
+    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod1:[self class] originSEL:@selector(method2) newSEL:@selector(method3)];
+    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod1:[self class] originSEL:@selector(method4) newSEL:@selector(method5)];
     
-    [BBMethodSwizzlingUtil bb_swizzleClassMethod:[self class] originSEL:@selector(methodA) newSEL:@selector(methodB)];
+    [BBMethodSwizzlingUtil bb_swizzleClassMethod1:[self class] originSEL:@selector(methodA) newSEL:@selector(methodB)];
 }
 
 - (void)run

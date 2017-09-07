@@ -21,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		584370811F61334C00333683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5843707C1F61334C00333683 /* objc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D;
+			remoteInfo = objc;
+		};
 		5870A51A1F5ED0F5002EA510 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5870A4F81F5ED0F5002EA510 /* Project object */;
@@ -38,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5843707C1F61334C00333683 /* objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = objc.xcodeproj; path = "TestMethodSwizzling/objc4-709/objc.xcodeproj"; sourceTree = "<group>"; };
 		5870A5001F5ED0F5002EA510 /* TestMethodSwizzling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMethodSwizzling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5870A5041F5ED0F5002EA510 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5870A5061F5ED0F5002EA510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5843707D1F61334C00333683 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				584370821F61334C00333683 /* libobjc.A.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5870A4F71F5ED0F5002EA510 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +110,7 @@
 				5870A51C1F5ED0F5002EA510 /* TestMethodSwizzlingTests */,
 				5870A5271F5ED0F5002EA510 /* TestMethodSwizzlingUITests */,
 				5870A5011F5ED0F5002EA510 /* Products */,
+				5843707C1F61334C00333683 /* objc.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +264,12 @@
 			mainGroup = 5870A4F71F5ED0F5002EA510;
 			productRefGroup = 5870A5011F5ED0F5002EA510 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5843707D1F61334C00333683 /* Products */;
+					ProjectRef = 5843707C1F61334C00333683 /* objc.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5870A4FF1F5ED0F5002EA510 /* TestMethodSwizzling */,
@@ -255,6 +278,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		584370821F61334C00333683 /* libobjc.A.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libobjc.A.dylib;
+			remoteRef = 584370811F61334C00333683 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5870A4FE1F5ED0F5002EA510 /* Resources */ = {
@@ -527,6 +560,7 @@
 				5870A52F1F5ED0F5002EA510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5870A5301F5ED0F5002EA510 /* Build configuration list for PBXNativeTarget "TestMethodSwizzlingTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +569,7 @@
 				5870A5321F5ED0F5002EA510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5870A5331F5ED0F5002EA510 /* Build configuration list for PBXNativeTarget "TestMethodSwizzlingUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +578,7 @@
 				5870A5351F5ED0F5002EA510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,7 +13,8 @@
 
 + (void)load
 {
-    [BBMethodSwizzlingUtil bb_swizzleClassMethod:[self class] originSEL:@selector(methodA) newSEL:@selector(methodC)];
+    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod1:[self class] originSEL:@selector(methodA) newSEL:@selector(methodC)];
+    [BBMethodSwizzlingUtil bb_swizzleInstanceMethod1:[self class] originSEL:@selector(method1) newSEL:@selector(method2)];
 }
 
 - (void)sleep

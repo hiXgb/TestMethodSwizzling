@@ -11,8 +11,13 @@
 
 @interface BBMethodSwizzlingUtil : NSObject
 
-+ (void)bb_swizzleInstanceMethod:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
-+ (void)bb_swizzleClassMethod:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
++ (void)bb_swizzleInstanceMethod1:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
++ (void)bb_swizzleInstanceMethod2:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
++ (void)bb_swizzleInstanceMethod3:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
+
++ (void)bb_swizzleClassMethod1:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
++ (void)bb_swizzleClassMethod2:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
++ (void)bb_swizzleClassMethod3:(Class)class originSEL:(SEL)originSEL newSEL:(SEL)newSEL;
 
 + (void)bb_printInstanceMethodList:(Class)class;
 + (void)bb_printClassMethodList:(Class)class;
